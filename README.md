@@ -1,5 +1,7 @@
 # Libros
 
+USUARIO ADMIN = correo : admin@admin.com contraseña : 1234567 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
 ## Development server
