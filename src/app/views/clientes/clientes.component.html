@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Clientes
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">APELLIDO</th>
+                        <th scope="col">CEDULA</th>
+                        <th scope="col">DIRECCION</th>
+                        <th scope="col"> CELULAR </th>
+                        <th scope="col"> CORREO </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of clientes;">
+                        <td> {{ cliente.nombre }} </td>
+                        <td> {{ cliente.apellido }} </td>
+                        <td> {{ cliente.cedula }} </td>
+                        <td> {{ cliente.direccion }} </td>
+                        <td> {{ cliente.celular }} </td>
+                        <td> {{ cliente.correo }} </td>
+                        <td> <button type="button" data-toggle="modal" data-target="#modalEdit" (click)="show(cliente)"
+                                class="btn btn-success"> Editar </button> </td>
+                        <td> <button class="btn btn-danger" (click)="eliminar(cliente)"> Eliminar </button> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a [routerLink]="['/dashboard']" class="btn btn-primary">Regresar</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <label for=""> Nombre </label>
+                            <input type="text" class="form-control" id="id" hidden>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="col">
+                            <label for=""> Apellido </label>
+                            <input type="text" class="form-control" id="apellido">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for=""> Cedula </label>
+                            <input type="text" class="form-control" id="cedula">
+                        </div>
+                        <div class="col">
+                            <label for=""> Direccion </label>
+                            <input type="text" class="form-control" id="direccion">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for=""> Celular </label>
+                            <input type="text" class="form-control" id="celular">
+                        </div>
+                        <div class="col">
+                            <label for=""> correo </label>
+                            <input type="text" class="form-control" id="correo">
+                            <input type="text" class="form-control" id="p" hidden>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" data-dismiss="modal" (click)="editar()" class="btn btn-primary"> Guardar </button>
+            </div>
+        </div>
+    </div>
+</div>
+

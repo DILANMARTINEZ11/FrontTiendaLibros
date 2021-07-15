@@ -1,0 +1,98 @@
+<div class="container" style="max-width:519px; align-items: center;">
+
+  <div class="card" >
+    <div class="card-header">
+      Iniciar Sesion
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="correo" placeholder="correo">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="psw" placeholder="contraseña">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button (click)="Login()" class="btn btn-primary">Iniciar Sesiòn</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCreate">
+             Crear Cuenta
+          </button>
+        </div>
+        <div class="col">
+          <div hidden id="alerta" class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Modal crear -->
+<div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <label for=""> Nombre </label>
+                            <input type="text" class="form-control" id="nombreC">
+                        </div>
+                        <div class="col">
+                            <label for=""> Apellido </label>
+                            <input type="text" class="form-control" id="apellidoC">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for=""> Cedula </label>
+                            <input type="text" class="form-control" id="cedulaC">
+                        </div>
+                        <div class="col">
+                            <label for=""> Direccion </label>
+                            <input type="text" class="form-control" id="direccionC">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for=""> Celular </label>
+                            <input type="text" class="form-control" id="celularC">
+                        </div>
+                        <div class="col">
+                            <label for=""> correo </label>
+                            <input type="text" class="form-control" id="correoC">
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for=""> contraseña </label>
+                            <input type="password" class="form-control" id="contrasenaC">
+                      </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" data-dismiss="modal" (click)="registro()" class="btn btn-primary"> Crear </button>
+            </div>
+        </div>
+    </div>
+</div>
