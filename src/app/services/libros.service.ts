@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LibrosService {
 
-  public baseUrl : String= 'https://tienda-alquiler-libros.herokuapp.com';
+  public baseUrl : String= 'https://tienda-libros-alquiler.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
